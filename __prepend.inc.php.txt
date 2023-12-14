@@ -1,0 +1,9 @@
+<?php
+
+$IP = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['REMOTE_ADDR'];
+
+if(in_array($IP, [{IPS}]))
+{
+    http_response_code(204);
+    exit;
+}

@@ -1,20 +1,5 @@
 <?php
 
-/*
-
-PREENCHER COM API DE GEOIP PAGA
-
-*/
-
-$IP = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['REMOTE_ADDR'];
-
-if(in_array($IP, [{IPS}]))
-{
-    http_response_code(204);
-    exit;
-}[root@racknerd-de8816 data2]# cat analyze-nginx-last-logs.php
-<?php
-
     define('IPDATADIR', '/cacheip/');
 
     $WHITELISTED_IPS = [

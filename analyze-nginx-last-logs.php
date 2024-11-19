@@ -3,11 +3,7 @@
     define('IPDATADIR', '/cacheip/');
 
     $WHITELISTED_IPS = [
-        '142.93.197.28' => 1,
-        '104.238.205.105' => 1,
-        '192.99.37.32' => 1,
-        '5.9.100.27' => 1,
-        '69.46.15.22' => 1,
+        #'1.1.1.1' => 1,
     ];
 
     if(!is_dir(IPDATADIR)) mkdir(IPDATADIR, 0777, true);
@@ -151,7 +147,7 @@
     function geoip($ip) {
         $FILE_EXISTS = IPDATADIR . $ip . '';
         if(is_file($FILE_EXISTS)) return json_decode(file_get_contents($FILE_EXISTS), true);
-        $JSON = file_get_contents("https://pro.ip-api.com/json/".$ip."?key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $JSON = file_get_contents("https://ip.data2.com.br/".$ip."/json");
 
         if(!empty($JSON))
         {
